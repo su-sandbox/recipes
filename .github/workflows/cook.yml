@@ -85,6 +85,14 @@ jobs:
           curl -sSL https://github.com/R-macos/XQuartz/releases/download/XQuartz-2.8.1/XQuartz-2.8.1.tar.xz \
            | sudo tar fxj - -C / && sudo sh /opt/X11/libexec/postinstall
 
+      - name: Report
+        run: |
+          echo PATH
+          echo $PATH
+          which java
+          java -version
+          ls -l /Library/Java/JavaVirtualMachines/
+
       - name: Build pkg-config
         run: ./build.sh -f pkgconfig xz
 
